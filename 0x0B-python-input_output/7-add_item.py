@@ -24,6 +24,8 @@ from 6-load_from_json_file import load_from_json_file
 
 filename = 'add_item.json'
 
+def main():
+"""Adds command-line arguments to a Python list and saves them to a JSON file."""
 try:
     data = load_from_json_file(filename)
 except FileNotFoundError:
