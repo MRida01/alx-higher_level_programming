@@ -1,8 +1,11 @@
 #!/usr/bin/python3
 """
-A script that takes in a URL, sends a request to the URL, and displays the body of the response (decoded in utf-8).
-"""
+a script that takes in a URL then sends a request to it and displays the
+body of the response (decoded in utf-8).
 
+Usage: ./3-error_code.py <URL>
+  - Handles HTTP errors.
+"""
 from sys import argv
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError
