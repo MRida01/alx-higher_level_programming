@@ -1,16 +1,2 @@
 #!/bin/bash
-if [ -z "$PYFILE" ]; then
-    echo "Error: PYFILE environment variable is not set."
-    exit 1
-fi
-filename=$(basename "$PYFILE")
-extension="${filename##*.}"
-filename_without_ext="${filename%.*}"
-if [ "$extension" != "py" ]; then
-    echo "Error: The file extension must be .py"
-    exit 1
-fi
 python3 -m py_compile "$PYFILE"
-compiled_file="${filename_without_ext}.pyc"
-mv "__pycache__/${filename_without_ext}.cpython-*.pyc" "$compiled_file"
-echo "Compiling $PYFILE ..."
