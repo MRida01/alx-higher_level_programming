@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stddef.h>
 
 listint_t *reverse_listint(listint_t **head);
 int is_palindrome(listint_t **head);
@@ -53,12 +54,12 @@ int is_palindrome(listint_t **head){
     return(0);
 
   temp = temp->next->next;
-  x =  reverselistint(&temp);
+  x =  reverse_listint(&temp);
   y = x;
   temp = *head;
   while (x)
     {
-      if (temp->n != rev->n)
+      if (temp->n != x->n)
 	return (0);
       temp = temp->next;
       x = x->next;
